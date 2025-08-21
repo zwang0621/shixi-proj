@@ -1,0 +1,20 @@
+server:
+  addr: ":8080"
+
+store:
+  driver: "mysql"
+  dsn: "root:Pai3.1415926@tcp(127.0.0.1:3306)/shixi_gpt?parseTime=true"
+
+collector:
+  cve_api_base: "https://services.nvd.nist.gov/rest/json/cves/2.0"
+  cve_api_key: "71518780-d12e-48c6-96fd-187f99e62033"  
+  request_timeout_sec: 20
+
+matcher:
+  weight_cve: 0.6
+  weight_cnvd: 0.25
+  weight_aliyun: 0.15
+
+cache:
+  kind: "memory"
+  ttl_minutes: 1440
